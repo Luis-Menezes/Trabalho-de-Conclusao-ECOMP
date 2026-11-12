@@ -1,0 +1,9 @@
+{
+    "[latex]": {
+        "editor.wordWrap": "on",
+        "editor.wordWrapColumn": 90,
+        "editor.wrappingIndent": "same"
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda"
+}

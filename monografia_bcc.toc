@@ -1,0 +1,16 @@
+\changetocdepth {3}
+\babel@toc {brazil}{}\relax 
+\contentsline {chapter}{\chapternumberline {1}Introdução}{13}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {2}Objetivos}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Objetivo Geral}{15}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Objetivos Específicos}{15}{section.2.2}%
+\contentsline {chapter}{\chapternumberline {3}Fundamentação Teórica}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Aprendizado Contrastivo e Modelos Fundacionais em Ciência dos Materiais}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Representação por Grafos e Transformações Estruturais em Sistemas Cristalinos}{18}{section.3.2}%
+\contentsline {chapter}{\chapternumberline {4}Revisão Bibliográfica}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Aprendizado Contrastivo}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Representações Estruturais de Materiais}{20}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Predição de Propriedades de Materiais 2D}{22}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Declaração sobre o Uso de Inteligência Artificial Generativa}{25}{section.5.1}%
+\contentsline {chapter}{Refer\^encias}{27}{chapter*.11}%
