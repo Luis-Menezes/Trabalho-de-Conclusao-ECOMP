@@ -11,6 +11,5 @@
 \contentsline {section}{\numberline {4.1}Aprendizado Contrastivo}{19}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Representações Estruturais de Materiais}{20}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Predição de Propriedades de Materiais 2D}{22}{section.4.3}%
-\contentsline {chapter}{\chapternumberline {5}Conclusão}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Declaração sobre o Uso de Inteligência Artificial Generativa}{25}{section.5.1}%
+\contentsline {chapter}{\chapternumberline {5}Declaração sobre o Uso de Inteligência Artificial Generativa}{25}{chapter.5}%
 \contentsline {chapter}{Refer\^encias}{27}{chapter*.11}%

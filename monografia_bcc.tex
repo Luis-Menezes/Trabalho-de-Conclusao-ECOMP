@@ -59,7 +59,7 @@
 % \titulo{Property Prediction for 2D Materials using Contrastive Learning}
 \autor{Luis Filipe Carvalho de Menezes}
 \local{São José dos Campos, SP}
-\data{Outubro de 2026}
+\data{Dezembro de 2026}
 \orientador{Prof. Dr. Marcos Gonçalves Quiles}
 % \coorientador{Prof. Dr. }
 \instituicao{%
@@ -229,9 +229,10 @@
 
 % resumo em português
 \begin{resumo}
-Materiais bidimensionais (2D) são promissores para aplicações eletrônicas e energéticas, mas o cálculo de suas lacunas de banda (\textit{band gap}) com a teoria do funcional da densidade (DFT) para grandes conjuntos de candidatos continua sendo custoso. Aqui, propomos uma estrutura de aprendizado contrastivo que extrai características representativas de cada material comparando pares positivos e negativos.
-O Banco de Dados Computational 2D Materials Database (C2DB) é utilizado, com 8.699 materiais que possuem uma lacuna de banda PBE, representados pelos termos de um corpo (K1) e dois corpos (K2) da representação tensorial de muitos corpos (MBTR) após um filtro de variância.
-O Aprendizado Constrastivo é utilizado para treinar uma rede siamês que mapeia K1 e K2 para um espaço latente de dimensão inferior, onde a distância cosseno entre pares positivos é minimizada e a distância entre pares negativos é maximizada.
+Materiais bidimensionais (2D) são promissores para aplicações eletrônicas e energéticas, mas o cálculo de suas propriedades físico-químicas por meio da Teoria do Funcional da Densidade (DFT) para grandes conjuntos de candidatos continua computacionalmente custoso. Neste trabalho, pretende-se investigar o aprendizado contrastivo, em abordagens auto-supervisionada e supervisionada, para extrair características estruturais representativas a partir da comparação entre pares positivos e negativos. Com o uso de Redes Neurais em Grafos (GNNs), propõe-se a implementação de modelos contrastivos para mapear amostras do \textit{Computational 2D Materials Database} (C2DB) em um espaço latente de dimensão inferior, minimizando a distância do cosseno entre pares positivos e maximizando-a entre pares negativos. Por fim, as representações latentes geradas serão empregadas na predição de propriedades como a lacuna de banda (\textit{band gap}) e a energia de formação. 
+% propomos uma estrutura de aprendizado contrastivo que extrai características representativas de cada material comparando pares positivos e negativos.
+% O Banco de Dados Computational 2D Materials Database (C2DB) é utilizado, com 8.699 materiais que possuem uma lacuna de banda PBE, representados pelos termos de um corpo (K1) e dois corpos (K2) da representação tensorial de muitos corpos (MBTR) após um filtro de variância.
+% O Aprendizado Constrastivo é utilizado para treinar uma rede siamês que mapeia K1 e K2 para um espaço latente de dimensão inferior, onde a distância cosseno entre pares positivos é minimizada e a distância entre pares negativos é maximizada.
 
 % Consiste na apresentação clara e concisa dos pontos relevantes do trabalho, de maneira a permitir ao leitor saber da conveniência ou não da sua leitura na íntegra. É redigido pelo autor, em português e em inglês, em páginas distintas, antecedendo a introdução. Cada um ocupará no máximo 1 folha, e poderão ter até 500 palavras. Para maiores informações com relação à redação consultar a NBR-6028 da ABNT (1990). 
 % Quanto ao estilo, o resumo deve ser composto por uma seqüência de frases completas e não por uma enumeração de tópicos; a primeira frase deverá ser significativa, explicando o tema principal do documento. Na redação, dar preferência ao uso da terceira pessoa do singular e do verbo na voz ativa. Após o resumo e o abstract devem constar palavras-chave relativas aos assuntos da monografia, em português e inglês respectivamente. Estas são alinhadas na margem inferior do documento. 
@@ -247,9 +248,7 @@ O Aprendizado Constrastivo é utilizado para treinar uma rede siamês que mapeia
 % resumo em inglês
 \begin{resumo}[Abstract]
  \begin{otherlanguage*}{english}
-Two-dimensional (2D) materials are promising for electronic and energy applications, but computing their band gaps with density functional theory (DFT) for large sets of candidates remains costly. Here, we will propose a contrastive learning framework that extracts representative features of each material by comparing positives and negatives pairs.
-We use the Computational 2D Materials Database (C2DB), with 8,699 materials that have a PBE band gap, represented by the one-body (K1) and two-body (K2) terms of the many-body tensor representation (MBTR) after a variance filter. 
-Contrastive learning is used to train a Siamese network that maps K1 and K2 to a lower dimesional latent space, where the cosine distance between positive pairs is minimized and that between negative pairs is maximized.
+Two-dimensional (2D) materials are promising for electronic and energy applications, but computing their physicochemical properties with Density Functional Theory (DFT) for large sets of candidates remains computationally expensive. In this work, we aim to investigate contrastive learning, under both self-supervised and supervised paradigms, to extract representative structural features by comparing positive and negative pairs. Using Graph Neural Networks (GNNs), we propose the implementation of contrastive models to map samples from the Computational 2D Materials Database (C2DB) into a lower-dimensional latent space, where the cosine distance between positive pairs is minimized and that between negative pairs is maximized. Finally, the learned latent representations will be applied to predict target properties such as the band gap and formation energy.
    \vspace{\onelineskip}
  
    \noindent 
@@ -260,25 +259,46 @@ Contrastive learning is used to train a Siamese network that maps K1 and K2 to a
 % ---
 % inserir lista de ilustrações
 % ---
-\pdfbookmark[0]{\listfigurename}{lof}
-\listoffigures*
-\cleardoublepage
+% \pdfbookmark[0]{\listfigurename}{lof}
+% \listoffigures*
+% \cleardoublepage
 % ---
 
 % ---
 % inserir lista de tabelas
 % ---
-\pdfbookmark[0]{\listtablename}{lot}
-\listoftables*
-\cleardoublepage
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
 % ---
 
+% 2D, 3D, ALIGNN, C2DB, CGCNN, CL, CLIP, CNN, DFT, GCL, GNN, HSE06, InfoNCE, KRR, MAE, MBTR, NT-Xent, PBE, SimCLR, SOAP, SupCon e VASP
 % ---
 % inserir lista de abreviaturas e siglas
 % ---
 \begin{siglas}
+  \item[2D] Bidimensional
+  \item[3D] Tridimensional
+  \item[ALIGNN] Atomic Line Graph Neural Network
+  \item[C2DB] Computational 2D Materials Database
+  \item[CGCNN] Crystal Graph Convolutional Neural Network
+  \item[CL] Contrastive Learning
+  \item[CLIP] Contrastive Language-Image Pre-training
+  \item[CNN] Convolutional Neural Network
   \item[DFT] Density Functional Theory
+  \item[GCL] Graph Contrastive Learning
+  \item[GNN] Graph Neural Network
+  \item[HSE06] Heyd-Scuseria-Ernzerhof
+  \item[InfoNCE] Information Noise-Contrastive Estimation
+  \item[KRR] Kernel Ridge Regression
+  \item[MAE] Mean Absolute Error
   \item[MBTR] Many-Body Tensor Representation
+  \item[NT-Xent] Normalized Temperature-Scaled Cross-Entropy
+  \item[PBE] Perdew-Burke-Ernzerhof
+  \item[SimCLR] Simple Framework for Contrastive Learning of Visual Representations
+  \item[SOAP] Smooth Overlap of Atomic Positions
+  \item[SupCon] Supervised Contrastive Learning
+  \item[VASP] Vienna Ab initio Simulation Package
   % \item[123] Isto é outro número
   % \item[lauro cesar] este é o meu nome
 \end{siglas}
@@ -299,7 +319,7 @@ Contrastive learning is used to train a Siamese network that maps K1 and K2 to a
 % inserir o sumario
 % ---
 \pdfbookmark[0]{\contentsname}{toc}
-\tableofcontents*
+% \tableofcontents*
 \cleardoublepage
 % ---
 
@@ -325,16 +345,12 @@ Apesar das promessas das abordagens computacionais, a determinação precisa das
 
 Embora a substituição dos cálculos ab initio por modelos de aprendizado profundo ofereça predições ordens de magnitude mais rápidas, a escassez de dados rotulados de alta fidelidade compromete o desempenho e a generalização de redes neurais puramente supervisionadas. É justamente para superar essa limitação que se justifica a adoção do aprendizado contrastivo. Por meio da combinação de abordagens auto-supervisionadas e supervisionadas, o aprendizado contrastivo mapeia a estrutura do material em um espaço latente no qual amostras estruturalmente ou funcionalmente semelhantes são aproximadas, enquanto amostras distintas são afastadas \cite{koker2022graph,moro2025multimodal}. Essa estratégia permite que o modelo extraia representações físicas robustas a partir de grandes volumes de dados não rotulados ou parcialmente rotulados, contornando a necessidade de gerar um número massivo de novos rótulos via DFT e aumentando a acurácia da predição de propriedades em materiais bidimensionais \cite{van2026survey}.
 
+Diante desse cenário, este trabalho investiga a aplicação de técnicas de aprendizado contrastivo para a extração de representações latentes de materiais bidimensionais e a subsequente predição de suas propriedades eletrônicas e termodinâmicas, como o \textit{band gap} e a energia de formação. A proposta busca avaliar como o alinhamento métrico no espaço latente contribui para melhorar a capacidade de generalização dos modelos preditivos em bases de dados computacionais de sistemas 2D, comparando o desempenho dessas representações com abordagens supervisionadas tradicionais.
 
 % Este capítulo tem o objetivo de descrever os detalhes necessários à correta formatação do Trabalho de Conclusão de Curso. As informações aqui apresentadas devem ser suficientes para formatar corretamente o documento com qualquer ferramenta de edição de texto. 
 
 % \section{Estrutura do Trabalho de Conclusão}
 % A estrutura do TCC deve seguir o modelo disposto neste documento e seus componetes podem ser visualizados na Figura \ref{fig:figura}.
-
-% \begin{figure}[!htb]
-% \includegraphics[width=\textwidth]{figurax.jpg}
-% \caption{Exemplo de figura no trabalho.\label{fig:figura}}
-% \end{figure}
 
 % Os itens obrigatórios incluem um capítulo de Introdução e Conclusão. É fortemente recomendado que o capítulo de Introdução obedeça a seguinte estrutura interna: 
 % \begin{itemize}
@@ -375,33 +391,46 @@ Embora a substituição dos cálculos ab initio por modelos de aprendizado profu
 % \subsubsection{Título de Subseção}
 % Veja aqui um exemplo de citaçao direta \cite{memoir}.
 
-
-% % ----------------------------------------------------------
-% % Capitulo com exemplos de comandos inseridos de arquivo externo 
-% % ----------------------------------------------------------
-
-% \include{abntex2-modelo-include-comandos}
 \chapter{Objetivos}
 
-Neste capítulo são apresentados os objetivos do trabalho, incluindo o objetivo geral e os objetivos específicos. Como este trabalho concentra-se na aplicação de aprendizado contrastivo para a predição de propriedades de materiais 2D, os objetivos específicos incluem a implementação de modelos de aprendizado contrastivo, a avaliação do desempenho desses modelos em conjuntos de dados relevantes e a análise dos resultados obtidos.
+Neste capítulo são apresentados o objetivo geral e os objetivos específicos que norteiam o desenvolvimento deste trabalho de conclusão de curso.
 
 \section{Objetivo Geral}
 
-Dado o o contexto da pesquisa, o objetivo geral deste trabalho é desenvolver e avaliar modelos de aprendizado contrastivo para a predição de propriedades de materiais 2D, visando contribuir para o avanço do conhecimento na área de ciência dos materiais e aprendizado de máquina.
-
-Este objetivo geral será alcançado através da implementação de técnicas de aprendizado contrastivo, análise de dados experimentais e comparação com métodos tradicionais de predição de propriedades de materiais, já desenvolvidas pelo autor.
-O trabalho se concentrará também na análise do espaço e representações geradas pelos modelos de aprendizado contrastivo, buscando identificar padrões e relações entre as propriedades dos materiais 2D e suas representações latentes.
+Dado o contexto da pesquisa, o objetivo geral deste trabalho é desenvolver, implementar e avaliar modelos baseados em aprendizado contrastivo para a predição de propriedades físico-químicas de materiais bidimensionais, buscando gerar representações latentes informativas que superem as limitações de modelos puramente supervisionados em cenários de escassez de dados rotulados.
 
 \section{Objetivos Específicos}
 
-Para atingir o objetivo geral, os seguintes objetivos específicos foram definidos:
+Para atingir o objetivo geral, foram definidos os seguintes objetivos específicos:
 
 \begin{itemize}
-\item Análise densa da literatura existente sobre aprendizado contrastivo e predição de propriedades de materiais 2D, identificando lacunas e oportunidades de pesquisa; 
-\item Desenvolvimento de modelos de aprendizado contrastivo para a predição de propriedades de materiais 2D;
-\item Avaliação do desempenho desses modelos em conjuntos de dados relevantes;
-\item Análise dos resultados obtidos e comparação com métodos tradicionais;
+    \item Realizar o levantamento bibliográfico sobre aprendizado contrastivo (auto-supervisionado e supervisionado) e representações estruturais aplicadas à ciência computacional de materiais 2D;
+    \item Estruturar e pré-processar conjuntos de dados de materiais bidimensionais (como a base C2DB), extraindo descritores estruturais e representações adequadas à modelagem;
+    \item Implementar e treinar arquiteturas de aprendizado contrastivo (incluindo redes siamesas e codificadores baseados em métricas de similaridade) para o mapeamento dos materiais em um espaço latente de baixa dimensão;
+    \item Avaliar a qualidade das representações latentes aprendidas e o desempenho preditivo para propriedades como \textit{band gap} e energia de formação, comparando os resultados com métodos tradicionais previamente explorados.
 \end{itemize}
+
+% \chapter{Objetivos}
+
+% Neste capítulo são apresentados os objetivos do trabalho, incluindo o objetivo geral e os objetivos específicos. Como este trabalho concentra-se na aplicação de aprendizado contrastivo para a predição de propriedades de materiais 2D, os objetivos específicos incluem a implementação de modelos de aprendizado contrastivo, a avaliação do desempenho desses modelos em conjuntos de dados relevantes e a análise dos resultados obtidos.
+
+% \section{Objetivo Geral}
+
+% Dado o o contexto da pesquisa, o objetivo geral deste trabalho é desenvolver e avaliar modelos de aprendizado contrastivo para a predição de propriedades de materiais 2D, visando contribuir para o avanço do conhecimento na área de ciência dos materiais e aprendizado de máquina.
+
+% Este objetivo geral será alcançado através da implementação de técnicas de aprendizado contrastivo, análise de dados experimentais e comparação com métodos tradicionais de predição de propriedades de materiais, já desenvolvidas pelo autor.
+% O trabalho se concentrará também na análise do espaço e representações geradas pelos modelos de aprendizado contrastivo, buscando identificar padrões e relações entre as propriedades dos materiais 2D e suas representações latentes.
+
+% \section{Objetivos Específicos}
+
+% Para atingir o objetivo geral, os seguintes objetivos específicos foram definidos:
+
+% \begin{itemize}
+% \item Análise densa da literatura existente sobre aprendizado contrastivo e predição de propriedades de materiais 2D, identificando lacunas e oportunidades de pesquisa; 
+% \item Desenvolvimento de modelos de aprendizado contrastivo para a predição de propriedades de materiais 2D;
+% \item Avaliação do desempenho desses modelos em conjuntos de dados relevantes;
+% \item Análise dos resultados obtidos e comparação com métodos tradicionais;
+% \end{itemize}
   
 \chapter{Fundamentação Teórica}
 
@@ -435,9 +464,20 @@ Além da vertente puramente auto-supervisionada, a literatura consolidou variaç
 
 A transição de um paradigma supervisionado rígido, cujas limitações de generalização diante da escassez de dados rotulados foram evidenciadas no trabalho de \textit{benchmark} MoleculeNet de Wu et al. \cite{wu2018moleculenet}, para o uso de \textit{encoders} contrastivos viabilizou o surgimento dos \textit{Foundation Models}. Conforme sintetizado no \textit{survey} de Van et al. \cite{van2026survey}, o pré-treinamento contrastivo em grandes volumes de dados não rotulados permite que a rede \textit{encoder} aprenda descritores universais. Essa representação pré-treinada pode, subsequentemente, ser transferida e refinada (\textit{fine-tuning}) para tarefas específicas com conjuntos de dados reduzidos.
 
+No paradigma de redes siamesas aplicadas ao aprendizado contrastivo, duas cópias de uma mesma rede codificadora $f_\theta(\cdot)$ com pesos compartilhados projetam um par de entradas $(\mathbf{x}_i, \mathbf{x}_j)$ para vetores latentes $\mathbf{z}_i = f_\theta(\mathbf{x}_i)$ e $\mathbf{z}_j = f_\theta(\mathbf{x}_j)$. A similaridade entre essas representações é frequentemente mensurada pela similaridade do cosseno:
+
+\begin{equation}
+    \text{sim}(\mathbf{z}_i, \mathbf{z}_j) = \frac{\mathbf{z}_i^\top \mathbf{z}_j}{\|\mathbf{z}_i\|_2 \, \|\mathbf{z}_j\|_2}
+\end{equation}
+
+Com base nessa métrica (ou na distância do cosseno $d_{\cos} = 1 - \text{sim}(\mathbf{z}_i, \mathbf{z}_j)$), funções de perda contrastivas — como a \textit{Contrastive Loss} baseada em margem ou a perda NT-Xent (\textit{Normalized Temperature-scaled Cross Entropy}) — ajustam os parâmetros $\theta$ de modo a aproximar pares positivos no espaço latente e afastar pares negativos.
+
+
 \section{Representações Estruturais de Materiais} \label{sec:rb_rs}
 
 A modelagem de propriedades físico-químicas via aprendizado de máquina requer a conversão de arranjos atômicos e geometrias cristalinas em descritores computacionais capazes de alimentar redes neurais. Historicamente, essa representação dependia de descritores estruturais desenhados manualmente (\textit{engineered fingerprints}), como as matrizes de Coulomb, representações de tensores de muitos corpos (\textit{Many-Body Tensor Representation} - MBTR) e o método SOAP (\textit{Smooth Overlap of Atomic Positions}) \cite{bartok2013representing}. O algoritmo SOAP, por exemplo, mapeia o ambiente atômico local através de distribuições contínuas de densidade gaussiana expansíveis em harmônicos esféricos, garantindo invariância por rotação, translação e permutação de átomos idênticos \cite{bartok2013representing}. Embora eficientes quando acoplados a modelos tradicionais como \textit{Kernel Ridge Regression} (KRR), descritores artesanais apresentam alta dimensão computacional e rigidez, falhando em capturar interações de longo alcance e simetrias globais complexas de forma adaptativa.
+
+% Para alimentar modelos de aprendizado de máquina com estruturas cristalinas periódicas, é necessário garantir invariância à translação, rotação e permutação de átomos idênticos. A Representação Tensorial de Muitos Corpos (\textit{Many-Body Tensor Representation} -- MBTR) codifica a estrutura atômica por meio de distribuições contínuas ponderadas de termos geométricos de diferentes ordens: o termo de um corpo ($K_1$) descreve a composição química (números atômicos presentes na célula unitária), o termo de dois corpos ($K_2$) captura a distribuição das distâncias inversas entre pares de átomos, e o termo de três corpos ($K_3$) representa os ângulos entre trios atômicos. Como vetores MBTR costumam apresentar alta dimensionalidade e esparsidade, técnicas de seleção de atributos, como filtros de variância, são empregadas para descartar dimensões pouco informativas antes do treinamento.
 
 A superação das limitações dos descritores estáticos ocorreu com a introdução das redes neurais baseadas em grafos (\textit{Graph Neural Networks} - GNNs), que consolidaram a aprendizagem profunda de representações estruturais como o estado da arte para a predição de propriedades de materiais \cite{xie2018crystal}. Sob essa perspectiva, uma estrutura cristalina é mapeada naturalmente como um grafo tridimensional $G = (V, E)$, no qual os nós ($V$) representam os átomos (codificados por vetores de características periódicas) e as arestas ($E$) representam as ligações químicas ou distâncias interatômicas relativas. Arquiteturas pioneiras, como a CGCNN (\textit{Crystal Graph Convolutional Neural Networks}) de Xie e Grossman \cite{xie2018crystal}, demonstraram que passar mensagens convolucionais entre nós vizinhos permite aprender representações ponta a ponta (\textit{end-to-end}) diretamente a partir das coordenadas e das condições periódicas de fronteira, superando os fingerprints tradicionais em termos de acurácia e generalização.
 
@@ -466,18 +506,38 @@ No âmbito dos materiais monocamada, destacam-se a \textit{Computational 2D Mate
 % \item \textbf{Anisotropia Estrutural e Aumentações Específicas:} Aumentações contrastivas espaciais (como deformações elásticas e ruídos atômicos) precisam respeitar a simetria plana da monocamada. Estiramentos isotrópicos em 3D podem distorcer irremediavelmente a física do sistema, exigindo aumentações anisotrópicas orientadas estritamente aos vetores primitivos $a_1$ e $a_2$ do plano da rede.
 % \end{enumerate}
 % \subsection*{Estado da Arte na Predição de Propriedades}
-Atualmente, o estado da arte na predição de propriedades em materiais cristalinos e 2D é liderado por arquiteturas de grafos que incorporam informações de linha (Line Graph Neural Networks) e invariâncias geométricas. Redes como o ALIGNN (\textit{Atomistic Line Graph Neural Network}) \cite{choudhary2021atomistic} e variações equivariantes baseadas em Transformers (como Equiformer \cite{liao2022equiformer}) alcançaram Erros Médios Absolutos (MAE) inferiores a $0.05$ ev/átomo para a energia de formação e da ordem de $0.15-0.25$ eV para o \textit{bandgap} na base C2DB e no repositório JARVIS.A integração dessas redes de alto desempenho (encoders ALIGNN ou Equiformer) com estratégias de aprendizado contrastivo pré-treinado no C2DB estabelece o ecossistema ideal para otimizar conjuntamente a predição da energia de formação e do \textit{bandgap} a partir de uma representação latente unificada.
+Atualmente, o estado da arte na predição de propriedades em materiais cristalinos e 2D é liderado por arquiteturas de grafos que incorporam informações de linha (Line Graph Neural Networks) e invariâncias geométricas. Redes como o ALIGNN (\textit{Atomistic Line Graph Neural Network}) \cite{choudhary2021atomistic} e variações equivariantes baseadas em Transformers (como Equiformer \cite{liao2022equiformer}) alcançaram Erros Médios Absolutos (MAE) inferiores a $0.05$ ev/átomo para a energia de formação e da ordem de $0.15-0.25$ eV para o \textit{bandgap} na base C2DB e no repositório JARVIS.A integração dessas redes de alto desempenho (encoders ALIGNN ou Equiformer) com estratégias de aprendizado contrastivo pré-treinado no C2DB estabelece o ecossistema ideal para otimizar conjuntamente a predição da energia de formação e do \textit{bandgap} a partir de uma representação latente unificada. 
+
+No quesito de aprendizado contrastivo aplicado a predição de propriedades, o trabalho de Koker et al. \cite{koker2022graph} demonstrou que a aplicação de aumentações (\textit{augmentations}) físicas específicas em estruturas cristalinas 3D permite que o modelo aprenda representações latentes invariantes que superam significativamente os descritores manuais em tarefas downstream de regressão de propriedades. A adaptação dessas técnicas para materiais 2D, considerando as particularidades geométricas e topológicas das monocamadas, constitui um desafio metodológico relevante e uma oportunidade de pesquisa promissora.
+Além disso, Pinheiro et al. \cite{pinheiro2023} exploraram o aprendizado contrastivo para a predição de propriedades eletrônicas em moleculas, demonstrando que a incorporação de rótulos durante o treinamento melhora a separabilidade das representações latentes e a acurácia das predições downstream.
 
 % ---
 \bookmarksetup{startatroot}% 
 % ---
 
+\chapter{Metodologia proposta}
+
+Na primeira etapa do trabaho, pretendemos utilizar o artigo de Koker como referência para a implementação de um modelo de aprendizado contrastivo baseado em grafos, adaptando-o para o domínio de materiais bidimensionais. A metodologia proposta envolve a construção de um pipeline de pré-processamento de dados, a definição de aumentações específicas para estruturas 2D, o treinamento do modelo contrastivo e a avaliação das representações latentes obtidas.
+A Figura \ref{fig:metodologia} ilustra o fluxo geral da metodologia proposta, destacando as etapas de pré-processamento, treinamento contrastivo e avaliação de desempenho.
+
+
+\begin{figure}[!htb]\label{fig:metodologia}
+\includegraphics[width=\textwidth]{Figures/fluxograma.pdf}
+\caption{Fluxograma da metodologia proposta para o desenvolvimento do modelo de aprendizado contrastivo aplicado a materiais bidimensionais. O pipeline inclui as etapas de pré-processamento de dados, treinamento contrastivo e avaliação das representações latentes obtidas.}
+\end{figure}
+
+
+
+
+Para pré-processamento, serão extraídas as estruturas cristalinas da base C2DB, convertendo-as em grafos atômicos com nós representando átomos e arestas representando ligações químicas. A etapa de aumentação envolverá a aplicação de transformações geométricas e topológicas que preservem as propriedades físicas dos materiais 2D, como pequenas perturbações atômicas e deformações elásticas no plano da monocamada. O treinamento contrastivo dependerá majoritariamnte da escolha da rede neural de grafos (como CGCNN ou Equiformer) e da função de perda contrastiva (como NT-Xent ou Contrastive Loss). A avaliação das representações latentes será realizada por meio de tarefas downstream, como a predição do \textit{bandgap} e da energia de formação, comparando o desempenho com modelos supervisionados tradicionais.
+
+
+
 % ---
 % Conclusão
 % ---
-\chapter{Conclusão}
-
-\section{Declaração sobre o Uso de Inteligência Artificial Generativa}
+% \chapter{Conclusão}
+\chapter{Declaração sobre o Uso de Inteligência Artificial Generativa}
 
 % Declaração sobre o uso de Inteligência Artificial Generativa. 
 Durante a elaboração deste trabalho, o autor utilizou a ferramenta Copilot Student com a finalidade de revisão de linguagem aplicada a auto-completação de frases. Após esse uso, o autor revisou e editou  o conteúdo conforme necessário e assume integral responsabilidade pelo conteúdo do trabalho.
