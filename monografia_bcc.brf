@@ -22,10 +22,10 @@
 \backcite {xu2021self}{{13}{4.1}{section.4.1}}
 \backcite {xu2021self}{{13}{4.1}{section.4.1}}
 \backcite {chen2024topogcl}{{13}{4.1}{section.4.1}}
-\backcite {chen2024topogcl}{{13}{4.1}{section.4.1}}
+\backcite {chen2024topogcl}{{14}{4.1}{section.4.1}}
 \backcite {wu2018moleculenet}{{14}{4.1}{section.4.1}}
 \backcite {van2026survey}{{14}{4.1}{section.4.1}}
-\backcite {bartok2013representing}{{14}{4.2}{section.4.2}}
+\backcite {bartok2013representing}{{15}{4.2}{section.4.2}}
 \backcite {bartok2013representing}{{15}{4.2}{section.4.2}}
 \backcite {xie2018crystal}{{15}{4.2}{section.4.2}}
 \backcite {xie2018crystal}{{15}{4.2}{section.4.2}}
@@ -35,14 +35,13 @@
 \backcite {liao2022equiformer}{{15}{4.2}{section.4.2}}
 \backcite {koker2022graph}{{15}{4.2}{section.4.2}}
 \backcite {koker2022graph}{{15}{4.2}{section.4.2}}
+\backcite {Pinheiro2022}{{16}{4.2}{section.4.2}}
 \backcite {van2026survey}{{16}{4.2}{section.4.2}}
 \backcite {moro2025multimodal}{{16}{4.2}{section.4.2}}
-\backcite {jain2013commentary}{{16}{4.3}{section.4.3}}
-\backcite {moro2025multimodal}{{16}{4.3}{section.4.3}}
-\backcite {haastrup2018computational, gantenbein2021c2db}{{16}{4.3}{section.4.3}}
-\backcite {haastrup2018computational, gantenbein2021c2db}{{16}{4.3}{section.4.3}}
-\backcite {choudhary2020joint}{{16}{4.3}{section.4.3}}
+\backcite {jain2013commentary}{{17}{4.3}{section.4.3}}
+\backcite {moro2025multimodal}{{17}{4.3}{section.4.3}}
+\backcite {haastrup2018computational, gantenbein2021c2db}{{17}{4.3}{section.4.3}}
+\backcite {haastrup2018computational, gantenbein2021c2db}{{17}{4.3}{section.4.3}}
+\backcite {choudhary2020joint}{{17}{4.3}{section.4.3}}
 \backcite {choudhary2021atomistic}{{17}{4.3}{section.4.3}}
 \backcite {liao2022equiformer}{{17}{4.3}{section.4.3}}
-\backcite {koker2022graph}{{17}{4.3}{section.4.3}}
-\backcite {pinheiro2023}{{17}{4.3}{section.4.3}}

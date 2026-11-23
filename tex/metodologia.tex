@@ -1,0 +1,17 @@
+
+\chapter{Metodologia proposta}
+
+Na primeira etapa do trabaho, pretendemos utilizar o artigo de Koker como referência para a implementação de um modelo de aprendizado contrastivo baseado em grafos, adaptando-o para o domínio de materiais bidimensionais. A metodologia proposta envolve a construção de um pipeline de pré-processamento de dados, a definição de aumentações específicas para estruturas 2D, o treinamento do modelo contrastivo e a avaliação das representações latentes obtidas.
+A Figura \ref{fig:metodologia} ilustra o fluxo geral da metodologia proposta, destacando as etapas de pré-processamento, treinamento contrastivo e avaliação de desempenho.
+
+
+\begin{figure}[!htb]\label{fig:metodologia}
+\includegraphics[width=\textwidth]{Figures/fluxograma.pdf}
+\caption{Fluxograma da metodologia proposta para o desenvolvimento do modelo de aprendizado contrastivo aplicado a materiais bidimensionais. O pipeline inclui as etapas de pré-processamento de dados, treinamento contrastivo e avaliação das representações latentes obtidas.}
+\end{figure}
+
+
+
+
+Para pré-processamento, serão extraídas as estruturas cristalinas da base C2DB, convertendo-as em grafos atômicos com nós representando átomos e arestas representando ligações químicas. A etapa de aumentação envolverá a aplicação de transformações geométricas e topológicas que preservem as propriedades físicas dos materiais 2D, como pequenas perturbações atômicas e deformações elásticas no plano da monocamada. O treinamento contrastivo dependerá majoritariamnte da escolha da rede neural de grafos (como CGCNN ou Equiformer) e da função de perda contrastiva (como NT-Xent ou Contrastive Loss). A avaliação das representações latentes será realizada por meio de tarefas downstream, como a predição do \textit{bandgap} e da energia de formação, comparando o desempenho com modelos supervisionados tradicionais.
+

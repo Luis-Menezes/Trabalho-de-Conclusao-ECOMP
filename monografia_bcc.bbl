@@ -6,82 +6,56 @@
 \abntbstabout{v<VERSION> }
 
 \bibitem[Bart{\'o}k, Kondor e Cs{\'a}nyi 2013]{bartok2013representing}
-\abntrefinfo{Bart{\'o}k, Kondor e Cs{\'a}nyi}{BART{\'O}K; KONDOR;
-  CS{\'A}NYI}{2013}
-{BART{\'O}K, A.~P.; KONDOR, R.; CS{\'A}NYI, G. On representing atomic
-  environments.
+\abntrefinfo{Bart{\'o}k, Kondor e Cs{\'a}nyi}{BART{\'O}K; KONDOR; CS{\'A}NYI}{2013}
+{BART{\'O}K, A.~P.; KONDOR, R.; CS{\'A}NYI, G. On representing atomic environments.
 \emph{Physical Review B}, APS, v.~87, n.~18, p. 184115, 2013.}
 
 \bibitem[Chen et al. 2020]{chen2020simple}
 \abntrefinfo{Chen et al.}{CHEN et al.}{2020}
-{CHEN, T. et al. A simple framework for contrastive learning of visual
-  representations. In:  \emph{International Conference on Machine Learning
-  (ICML)}. [S.l.: s.n.], 2020. p. 1597--1607.}
+{CHEN, T. et al. A simple framework for contrastive learning of visual representations. In:  \emph{International Conference on Machine Learning (ICML)}. [S.l.: s.n.], 2020. p. 1597--1607.}
 
 \bibitem[Chen, Frias e Gel 2024]{chen2024topogcl}
 \abntrefinfo{Chen, Frias e Gel}{CHEN; FRIAS; GEL}{2024}
-{CHEN, Y.; FRIAS, J.; GEL, Y.~R. Topogcl: topological graph contrastive
-  learning. In:  \emph{Proceedings of the Thirty-Eighth AAAI Conference on
-  Artificial Intelligence and Thirty-Sixth Conference on Innovative
-  Applications of Artificial Intelligence and Fourteenth Symposium on
-  Educational Advances in Artificial Intelligence}. AAAI Press, 2024.
-  (AAAI'24/IAAI'24/EAAI'24).
-ISBN 978-1-57735-887-9. Dispon{\'\i}vel em:
-  $<$https:\-/\-/doi\-.org\-/10\-.1609\-/aaai\-.v38i10\-.29026$>$.}
+{CHEN, Y.; FRIAS, J.; GEL, Y.~R. Topogcl: topological graph contrastive learning. In:  \emph{Proceedings of the Thirty-Eighth AAAI Conference on Artificial Intelligence and Thirty-Sixth Conference on Innovative Applications of Artificial Intelligence and Fourteenth Symposium on Educational Advances in Artificial Intelligence}. AAAI Press, 2024.  (AAAI'24/IAAI'24/EAAI'24).
+ISBN 978-1-57735-887-9. Dispon{\'\i}vel em: $<$https:\-/\-/doi\-.org\-/10\-.1609\-/aaai\-.v38i10\-.29026$>$.}
 
 \bibitem[Choudhary e DeCost 2021]{choudhary2021atomistic}
 \abntrefinfo{Choudhary e DeCost}{CHOUDHARY; DECOST}{2021}
-{CHOUDHARY, K.; DECOST, B. Atomistic line graph neural network for improved
-  materials property predictions.
-\emph{npj Computational Materials}, Nature Publishing Group UK London, v.~7,
-  n.~1, p.~185, 2021.}
+{CHOUDHARY, K.; DECOST, B. Atomistic line graph neural network for improved materials property predictions.
+\emph{npj Computational Materials}, Nature Publishing Group UK London, v.~7, n.~1, p.~185, 2021.}
 
 \bibitem[Choudhary et al. 2020]{choudhary2020joint}
 \abntrefinfo{Choudhary et al.}{CHOUDHARY et al.}{2020}
-{CHOUDHARY, K. et al. The joint automated repository for various integrated
-  simulations (jarvis) for data-driven materials design.
-\emph{npj Computational Materials}, Nature Publishing Group UK London, v.~6,
-  n.~1, p.~173, 2020.}
+{CHOUDHARY, K. et al. The joint automated repository for various integrated simulations (jarvis) for data-driven materials design.
+\emph{npj Computational Materials}, Nature Publishing Group UK London, v.~6, n.~1, p.~173, 2020.}
 
 \bibitem[Gantenbein, Haastrup e Thygesen 2021]{gantenbein2021c2db}
-\abntrefinfo{Gantenbein, Haastrup e Thygesen}{GANTENBEIN; HAASTRUP;
-  THYGESEN}{2021}
-{GANTENBEIN, M.; HAASTRUP, S.; THYGESEN, K.~S. The computational 2d materials
-  database: recent developments and applications.
+\abntrefinfo{Gantenbein, Haastrup e Thygesen}{GANTENBEIN; HAASTRUP; THYGESEN}{2021}
+{GANTENBEIN, M.; HAASTRUP, S.; THYGESEN, K.~S. The computational 2d materials database: recent developments and applications.
 \emph{Electronic Structure}, IOP Publishing, v.~3, n.~2, p. 023001, 2021.}
 
 \bibitem[Haastrup et al. 2018]{haastrup2018computational}
 \abntrefinfo{Haastrup et al.}{HAASTRUP et al.}{2018}
-{HAASTRUP, S. et al. The computational 2d materials database (c2db): a
-  high-throughput database of structural, electronic, optical, and magnetic
-  properties of two-dimensional materials.
+{HAASTRUP, S. et al. The computational 2d materials database (c2db): a high-throughput database of structural, electronic, optical, and magnetic properties of two-dimensional materials.
 \emph{2D Materials}, IOP Publishing, v.~5, n.~4, p. 042002, 2018.}
 
 \bibitem[Hadsell, Chopra e LeCun 2006]{hadsell2006dimensionality}
 \abntrefinfo{Hadsell, Chopra e LeCun}{HADSELL; CHOPRA; LECUN}{2006}
-{HADSELL, R.; CHOPRA, S.; LECUN, Y. Dimensionality reduction by learning an
-  invariant mapping. In:  \emph{IEEE Computer Society Conference on Computer
-  Vision and Pattern Recognition (CVPR)}. [S.l.: s.n.], 2006. v.~2, p.
-  1735--1742.}
+{HADSELL, R.; CHOPRA, S.; LECUN, Y. Dimensionality reduction by learning an invariant mapping. In:  \emph{IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR)}. [S.l.: s.n.], 2006. v.~2, p. 1735--1742.}
 
 \bibitem[Jain et al. 2013]{jain2013commentary}
 \abntrefinfo{Jain et al.}{JAIN et al.}{2013}
-{JAIN, A. et al. Commentary: The materials project: A materials genome approach
-  to accelerating materials innovation.
+{JAIN, A. et al. Commentary: The materials project: A materials genome approach to accelerating materials innovation.
 \emph{APL Materials}, AIP Publishing, v.~1, n.~1, p. 011002, 2013.}
 
 \bibitem[Khosla et al. 2020]{khosla2020supervised}
 \abntrefinfo{Khosla et al.}{KHOSLA et al.}{2020}
 {KHOSLA, P. et al. Supervised contrastive learning.
-\emph{Advances in Neural Information Processing Systems (NeurIPS)}, v.~33, p.
-  18661--18733, 2020.}
+\emph{Advances in Neural Information Processing Systems (NeurIPS)}, v.~33, p. 18661--18733, 2020.}
 
 \bibitem[Klicpera, Gro{\ss} e G{\"u}nnemann 2020]{klicpera2020directional}
-\abntrefinfo{Klicpera, Gro{\ss} e G{\"u}nnemann}{KLICPERA; GRO{SS};
-  G{\"U}NNEMANN}{2020}
-{KLICPERA, J.; GRO{SS}, J.; G{\"U}NNEMANN, S. Directional message passing for
-  molecular graphs. In:  \emph{International Conference on Learning
-  Representations (ICLR)}. [S.l.: s.n.], 2020.}
+\abntrefinfo{Klicpera, Gro{\ss} e G{\"u}nnemann}{KLICPERA; GRO{SS}; G{\"U}NNEMANN}{2020}
+{KLICPERA, J.; GRO{SS}, J.; G{\"U}NNEMANN, S. Directional message passing for molecular graphs. In:  \emph{International Conference on Learning Representations (ICLR)}. [S.l.: s.n.], 2020.}
 
 \bibitem[Koker et al. 2022]{koker2022graph}
 \abntrefinfo{Koker et al.}{KOKER et al.}{2022}
@@ -91,42 +65,38 @@ NeurIPS 2022 AI4Mat Workshop.}
 
 \bibitem[Kresse e Furthm{\"u}ller 1996]{kresse1996efficient}
 \abntrefinfo{Kresse e Furthm{\"u}ller}{KRESSE; FURTHM{\"U}LLER}{1996}
-{KRESSE, G.; FURTHM{\"U}LLER, J. Efficient iterative schemes for ab initio
-  total-energy calculations using a plane-wave basis set.
-\emph{Physical Review B}, American Physical Society, v.~54, n.~16, p.
-  11169--11186, 1996.}
+{KRESSE, G.; FURTHM{\"U}LLER, J. Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set.
+\emph{Physical Review B}, American Physical Society, v.~54, n.~16, p. 11169--11186, 1996.}
 
 \bibitem[Langer, Goe{\ss}mann e Rupp 2022]{langer2022representations}
 \abntrefinfo{Langer, Goe{\ss}mann e Rupp}{LANGER; GOE{SS}MANN; RUPP}{2022}
-{LANGER, M.~F.; GOE{SS}MANN, A.; RUPP, M. Representations of molecules and
-  materials for interpolation of quantum-mechanical simulations via machine
-  learning.
-\emph{npj Computational Materials}, Nature Publishing Group, v.~8, n.~1, p.~41,
-  2022.}
+{LANGER, M.~F.; GOE{SS}MANN, A.; RUPP, M. Representations of molecules and materials for interpolation of quantum-mechanical simulations via machine learning.
+\emph{npj Computational Materials}, Nature Publishing Group, v.~8, n.~1, p.~41, 2022.}
 
 \bibitem[Liao e Smidt 2023]{liao2022equiformer}
 \abntrefinfo{Liao e Smidt}{LIAO; SMIDT}{2023}
-{LIAO, Y.-L.; SMIDT, T. Equiformer: Equivariant graph neural networks for 3d
-  atomistic graphs. In:  \emph{International Conference on Learning
-  Representations (ICLR)}. [S.l.: s.n.], 2023.}
+{LIAO, Y.-L.; SMIDT, T. Equiformer: Equivariant graph neural networks for 3d atomistic graphs. In:  \emph{International Conference on Learning Representations (ICLR)}. [S.l.: s.n.], 2023.}
 
 \bibitem[Moro et al. 2025]{moro2025multimodal}
 \abntrefinfo{Moro et al.}{MORO et al.}{2025}
-{MORO, A. et al. Multimodal foundation models for material property prediction
-  and discovery.
+{MORO, A. et al. Multimodal foundation models for material property prediction and discovery.
 \emph{Newton}, Elsevier ScienceDirect, v.~1, n.~1, p. 100016, 2025.}
+
+\bibitem[Pinheiro, Silva e Quiles 2022]{Pinheiro2022}
+\abntrefinfo{Pinheiro, Silva e Quiles}{PINHEIRO; SILVA; QUILES}{2022}
+{PINHEIRO, G.~A.; SILVA, J. L.~F. D.; QUILES, M.~G. Smiclr: Contrastive learning on multiple molecular representations for semisupervised and unsupervised representation learning.
+\emph{Journal of Chemical Information and Modeling}, American Chemical Society (ACS), v.~62, n.~17, p. 3948–3960, ago. 2022.
+ISSN 1549-960X.
+Dispon{\'\i}vel em: \htmladdnormallink{$<$http:\-/\-/dx\-.doi\-.org\-/10\-.1021\-/acs\-.jcim\-.2c00521$>$}{http://dx.doi.org/10.1021/acs.jcim.2c00521}.}
 
 \bibitem[Sch{\"u}tt et al. 2018]{schutt2018schnet}
 \abntrefinfo{Sch{\"u}tt et al.}{SCH{\"U}TT et al.}{2018}
-{SCH{\"U}TT, K.~T. et al. Schnet--a deep learning architecture for molecules
-  and materials.
-\emph{The Journal of Chemical Physics}, AIP Publishing, v.~148, n.~24, p.
-  241722, 2018.}
+{SCH{\"U}TT, K.~T. et al. Schnet--a deep learning architecture for molecules and materials.
+\emph{The Journal of Chemical Physics}, AIP Publishing, v.~148, n.~24, p. 241722, 2018.}
 
 \bibitem[Van et al. 2026]{van2026survey}
 \abntrefinfo{Van et al.}{VAN et al.}{2026}
-{VAN, T. et al. A survey of ai for materials science: Foundation models, llm
-  agents, datasets, and tools.
+{VAN, T. et al. A survey of ai for materials science: Foundation models, llm agents, datasets, and tools.
 \emph{Journal of the ACM}, ACM, 2026.}
 
 \bibitem[Wu et al. 2018]{wu2018moleculenet}
@@ -138,14 +108,12 @@ Dispon{\'\i}vel em: $<$https:\-/\-/doi\-.org\-/10\-.1039\-/c7sc02664a$>$.}
 
 \bibitem[Xie e Grossman 2018]{xie2018crystal}
 \abntrefinfo{Xie e Grossman}{XIE; GROSSMAN}{2018}
-{XIE, T.; GROSSMAN, J.~C. Crystal graph convolutional neural networks for an
-  accurate and automated prediction of material properties.
+{XIE, T.; GROSSMAN, J.~C. Crystal graph convolutional neural networks for an accurate and automated prediction of material properties.
 \emph{Physical Review Letters}, APS, v.~120, n.~14, p. 145301, 2018.}
 
 \bibitem[Xu et al. 2021]{xu2021self}
 \abntrefinfo{Xu et al.}{XU et al.}{2021}
-{XU, M. et al. \emph{Self-supervised Graph-level Representation Learning with
-  Local and Global Structure}. arXiv, 2021.
+{XU, M. et al. \emph{Self-supervised Graph-level Representation Learning with Local and Global Structure}. arXiv, 2021.
 Dispon{\'\i}vel em: $<$https:\-/\-/arxiv\-.org\-/abs\-/2106\-.04113$>$.}
 
 \end{thebibliography}
