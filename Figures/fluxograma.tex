@@ -1,0 +1,110 @@
+\resizebox{\textwidth}{!}  {%
+    \begin{tikzpicture}[
+        font=\small,
+        node distance=1.2cm and 1.3cm,
+        every text node part/.style={align=center},
+        % Estilos de Blocos
+        boxInput/.style={
+            rectangle, draw=mainblue, fill=lightblue, thick, rounded corners=5pt,
+            minimum width=3.2cm, minimum height=1.1cm, font=\sffamily
+        },
+        boxProc/.style={
+            rectangle, draw=accentcyan, fill=lightcyan, thick, rounded corners=5pt,
+            minimum width=3.0cm, minimum height=1.1cm, font=\sffamily
+        },
+        boxModel/.style={
+            rectangle, draw=accentpurple, fill=lightpurple, thick, rounded corners=5pt,
+            minimum width=3.8cm, minimum height=1.2cm, font=\bfseries\sffamily
+        },
+        boxLoss/.style={
+            rectangle, draw=accentgreen, fill=lightgreen, thick, rounded corners=5pt,
+            minimum width=3.6cm, minimum height=1.1cm, font=\sffamily
+        },
+        boxOut/.style={
+            rectangle, draw=mainblue, fill=lightblue, thick, rounded corners=5pt,
+            minimum width=2.8cm, minimum height=1.1cm, font=\sffamily
+        },
+        arrow/.style={
+            -{Stealth[scale=1.0]}, thick, color=darkgray
+        },
+        dashedArrow/.style={
+            -{Stealth[scale=1.0]}, thick, color=accentpurple, dashed
+        },
+        groupTitle/.style={
+            font=\bfseries\sffamily, color=darkgray
+        }
+    ]
+
+    % --- FASE 1: Pré-Treinamento Contrastivo ---
+    \node (c2db) [boxInput] {\textbf{Banco de Dados C2DB}\\Estruturas 2D};
+    \node (graph) [boxProc, below=of c2db] {\textbf{Grafo Cristalino}\\$G = (V, E)$\\(Átomos e Arestas)};
+
+    % Estratégias (Auto-supervisionada e Supervisionada)
+    \node (aug) [boxProc, above right=0.4cm and 1.0cm of graph] {\textbf{Ramo Auto-Supervisionado}\\Aumentações Estruturais ($\tilde{G}_i, \tilde{G}_j$)};
+    \node (sup) [boxProc, below right=0.4cm and 1.4cm of graph] {\textbf{Ramo Supervisionado}\\Pares por Rótulo ($E_g, \Delta H$)};
+
+    % Codificadores GNN
+    \node (encoder1) [boxModel, right=1.0cm of aug] {\textbf{Codificador GNN } $f_\theta$};
+    \node (encoder2) [boxModel, right=1.85cm of sup] {\textbf{Codificador GNN } $f_\theta$};
+
+    % Cabeças de Projeção
+    \node (proj1) [boxProc, right=0.9cm of encoder1] {\textbf{Projeção } $g_\phi$\\Vetor $\mathbf{z}_i$};
+    \node (proj2) [boxProc, right=0.9cm of encoder2] {\textbf{Projeção } $g_\phi$\\Vetor $\mathbf{z}_j$};
+
+    % Função de Perda Contrastiva
+    \node (loss) [boxLoss, right=1.0cm of proj1, yshift=-1.5cm] {\textbf{Perda Contrastiva} $\mathcal{L}_{\text{cont}}$\\[2pt]\scriptsize $\min d_{\cos}(\mathbf{z}_i, \mathbf{z}_j)$ (Positivos)\\\scriptsize $\max d_{\cos}(\mathbf{z}_i, \mathbf{z}_k)$ (Negativos)};
+
+    % Conexões Fase 1
+    \draw [arrow] (c2db) -- (graph);
+    \draw [arrow] (graph.east) -- ++(0.4,0) |- (aug.west);
+    \draw [arrow] (graph.east) -- ++(0.4,0) |- (sup.west);
+    \draw [arrow] (aug) -- (encoder1);
+    \draw [arrow] (sup) -- (encoder2);
+    \draw [arrow] (encoder1) -- (proj1);
+    \draw [arrow] (encoder2) -- (proj2);
+    \draw [arrow] (proj1.east) -- ++(0.3,0) |- (loss.west);
+    \draw [arrow] (proj2.east) -- ++(0.3,0) |- (loss.west);
+
+    % Indicação de Pesos Compartilhados
+    \draw [<->, dashed, color=accentpurple, thick] (encoder1) -- node[left, font=\scriptsize\sffamily, align=right] {\textbf{Pesos}\\\textbf{Compartilhados}} (encoder2);
+
+    % Container Fase 1
+    \begin{scope}[on background layer]
+        \node (bg1) [
+            draw=bordergray, fill=black!2, thick, rounded corners=8pt,
+            fit=(c2db) (graph) (aug) (sup) (encoder1) (encoder2) (proj1) (proj2) (loss),
+            inner sep=20pt
+        ] {};
+        \node [anchor=north west, groupTitle] at (bg1.north west) {FASE 1: Pré-Treinamento Contrastivo (Aprendizado de Representação)};
+    \end{scope}
+
+    % --- FASE 2: Ajuste Fino e Regressão Downstream ---
+    \node (testData) [boxInput, below=4.0cm of graph] {\textbf{Estrutura 2D Alvo}\\$G \in \text{C2DB}$};
+    \node (ftEncoder) [boxModel, right=2.0cm of testData] {\textbf{Codificador GNN } $f_\theta$\\(Pesos Pré-treinados)};
+    \node (emb) [boxProc, right=1.5cm of ftEncoder] {\textbf{Vetor Latente}\\$\mathbf{h}\in\mathbb{R}^d$};
+    \node (mlp) [boxProc, right=1.5cm of emb] {\textbf{Regressor MLP}\\Camadas Densas};
+    \node (preds) [boxOut, right=1.5cm of mlp] {\textbf{Propriedades Alvo}\\[3pt] \small Band Gap ($E_g$)\\[2pt] \small Energia Formação ($\Delta H$)};
+
+    % Conexões Fase 2
+    \draw [arrow] (testData) -- (ftEncoder);
+    \draw [arrow] (ftEncoder) -- (emb);
+    \draw [arrow] (emb) -- (mlp);
+    \draw [arrow] (mlp) -- (preds);
+
+    % Transferência de Conhecimento (Fase 1 para Fase 2)
+    \draw [dashedArrow] (encoder2.south) 
+        -- ([yshift=0.45cm] encoder2.south |- ftEncoder.north) 
+        -| node[pos=0.25, above, font=\scriptsize\sffamily, align=center] {\textbf{Transferência de Pesos $f_\theta$}} (ftEncoder.north);
+
+    % Container Fase 2
+    \begin{scope}[on background layer]
+        \node (bg2) [
+            draw=bordergray, fill=black!2, thick, rounded corners=8pt,
+            fit=(testData) (ftEncoder) (emb) (mlp) (preds),
+            inner sep=20pt
+        ] {};
+        \node [anchor=north west, groupTitle] at (bg2.north west) {FASE 2: Ajuste Fino (\textit{Downstream Task})};
+    \end{scope}
+
+    \end{tikzpicture}%
+    }

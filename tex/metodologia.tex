@@ -1,17 +1,76 @@
 
 \chapter{Metodologia proposta}
 
-Na primeira etapa do trabaho, pretendemos utilizar o artigo de Koker como referência para a implementação de um modelo de aprendizado contrastivo baseado em grafos, adaptando-o para o domínio de materiais bidimensionais. A metodologia proposta envolve a construção de um pipeline de pré-processamento de dados, a definição de aumentações específicas para estruturas 2D, o treinamento do modelo contrastivo e a avaliação das representações latentes obtidas.
-A Figura \ref{fig:metodologia} ilustra o fluxo geral da metodologia proposta, destacando as etapas de pré-processamento, treinamento contrastivo e avaliação de desempenho.
+A pesquisa terá caráter experimental e quantitativo, com execução de experimentos computacionais controlados para comparar estratégias de aprendizado contrastivo na predição de propriedades de materiais bidimensionais. O trabalho será desenvolvido em etapas: preparação dos dados da base C2DB, construção das representações em grafos, treinamento dos modelos e avaliação em tarefas de regressão. Os métodos CrystalCLR, de Koker et al.~\cite{koker2022graph}, e SMICLR, de Pinheiro et al.~\cite{Pinheiro2022}, serão utilizados como referência para a adaptação das técnicas de aprendizado contrastivo ao domínio químico.
+Na implementação, a CGCNN será adotada como arquitetura principal do codificador, por ser compatível com grafos cristalinos e permitir a comparação direta com o CrystalCLR. A mesma arquitetura e as mesmas partições dos dados serão usadas nas configurações contrastivas e no modelo de referência supervisionado, de modo que a comparação permita avaliar a contribuição do pré-treinamento contrastivo. A Figura \ref{fig:arquitetura_proposta} apresenta o fluxo geral do trabalho.
 
 
-\begin{figure}[!htb]\label{fig:metodologia}
-\includegraphics[width=\textwidth]{Figures/fluxograma.pdf}
-\caption{Fluxograma da metodologia proposta para o desenvolvimento do modelo de aprendizado contrastivo aplicado a materiais bidimensionais. O pipeline inclui as etapas de pré-processamento de dados, treinamento contrastivo e avaliação das representações latentes obtidas.}
+\begin{figure}[htbp]
+    \centering
+    \caption{Fluxo conceitual da arquitetura proposta para predição de propriedades de materiais bidimensionais.}
+    \label{fig:arquitetura_proposta}
+    \input{Figures/fluxograma.tex}
+    % \fonte{Elaborado pelo autor (2026).}
 \end{figure}
 
 
+\section{Procedimentos metodológicos}
 
+\begin{enumerate}
+    \item \textbf{Seleção e preparação dos dados:} serão obtidas da C2DB~\cite{haastrup2018computational,gantenbein2021c2db} as estruturas cristalinas e os valores disponíveis para o \textit{band gap} e a energia de formação. Serão verificadas a presença de valores ausentes, unidades, convenções de cálculo e estruturas duplicadas. Para cada propriedade, serão mantidas apenas as amostras com rótulos válidos e compatíveis; se houver mais de um nível de cálculo para uma propriedade, será selecionada uma única convenção para os experimentos comparáveis.
 
-Para pré-processamento, serão extraídas as estruturas cristalinas da base C2DB, convertendo-as em grafos atômicos com nós representando átomos e arestas representando ligações químicas. A etapa de aumentação envolverá a aplicação de transformações geométricas e topológicas que preservem as propriedades físicas dos materiais 2D, como pequenas perturbações atômicas e deformações elásticas no plano da monocamada. O treinamento contrastivo dependerá majoritariamnte da escolha da rede neural de grafos (como CGCNN ou Equiformer) e da função de perda contrastiva (como NT-Xent ou Contrastive Loss). A avaliação das representações latentes será realizada por meio de tarefas downstream, como a predição do \textit{bandgap} e da energia de formação, comparando o desempenho com modelos supervisionados tradicionais.
+    \item \textbf{Construção dos grafos e partições:} cada estrutura será representada por um grafo periódico, com átomos como nós e vizinhanças atômicas como arestas, codificando-se as espécies químicas e as distâncias interatômicas. Após a remoção de duplicatas, as estruturas serão separadas em conjuntos de treinamento, validação e teste na proporção inicial de 70\%, 15\% e 15\%, respectivamente. Estruturas duplicadas ou equivalentes não serão distribuídas entre partições diferentes, para reduzir o risco de vazamento de dados. Caso o número de amostras válidas de uma propriedade não permita essa divisão, as proporções serão ajustadas e registradas antes do treinamento. A mesma divisão será utilizada em todas as comparações.
+
+    \item \textbf{Definição e validação das aumentações:} serão implementadas duas visões de cada estrutura de treinamento, necessárias ao aprendizado contrastivo. Serão avaliadas transformações geométricas fisicamente plausíveis, como pequenas perturbações das posições atômicas e deformações no plano da monocamada. Os parâmetros das transformações serão limitados e verificados para evitar estruturas inválidas ou alterações que mudem a identidade química do material. As aumentações serão aplicadas somente aos dados de treinamento; validação e teste permanecerão sem alterações.
+
+    \item \textbf{Treinamento dos modelos:} serão comparadas três configurações: (a) CGCNN treinada diretamente para regressão, como referência supervisionada; (b) pré-treinamento auto-supervisionado com a perda NT-Xent, usando duas visões aumentadas da mesma estrutura como par positivo e as demais amostras do lote como negativos; e (c) pré-treinamento supervisionado por contraste, usando a perda SupCon. Nesta última configuração, os valores contínuos de cada propriedade serão divididos em faixas definidas pelos quantis do conjunto de treinamento; materiais na mesma faixa formarão pares positivos e materiais em faixas distintas, pares negativos. Será treinado um modelo contrastivo supervisionado separado para cada propriedade. Após o pré-treinamento, o codificador será ajustado junto a uma camada de regressão usando os rótulos de treinamento. Os hiperparâmetros serão escolhidos com base no conjunto de validação, sem utilizar os resultados do teste.
+
+    \item \textbf{Avaliação e análise:} os codificadores treinados serão avaliados em tarefas de regressão do \textit{band gap} e da energia de formação. O desempenho será medido por erro absoluto médio (MAE), raiz do erro quadrático médio (RMSE) e coeficiente de determinação ($R^2$), apresentados separadamente para cada alvo. Para investigar o efeito da escassez de rótulos, o ajuste fino será repetido utilizando 10\%, 25\%, 50\% e 100\% dos rótulos disponíveis no conjunto de treinamento; validação e teste permanecerão inalterados. Cada experimento será repetido com três sementes aleatórias, reportando-se a média e o desvio-padrão das métricas. A análise final discutirá o desempenho, a variabilidade e as limitações observadas, sem pressupor previamente que o método contrastivo será superior.
+
+    \item \textbf{Registro e redação:} serão documentados as versões dos dados e das bibliotecas, as configurações dos experimentos, as sementes aleatórias e os resultados obtidos. Os resultados e as decisões metodológicas serão incorporados progressivamente ao texto, que será revisado ao final do período.
+\end{enumerate}
+
+\section{Atividades e Cronograma}
+
+\subsection{Lista de atividades}
+
+\begin{enumerate}
+    \item Concluir o levantamento bibliográfico e fixar o protocolo experimental, incluindo arquitetura principal, propriedades-alvo, critérios de inclusão e métricas.
+    \item Obter e caracterizar os dados da C2DB; tratar valores ausentes, unidades, duplicatas e a consistência dos rótulos.
+    \item Implementar a conversão das estruturas em grafos periódicos, definir as partições de treinamento, validação e teste e verificar a ausência de sobreposição entre elas.
+    \item Implementar e validar as aumentações estruturais e treinar o modelo de referência supervisionado.
+    \item Implementar e treinar as configurações auto-supervisionada e supervisionada por contraste, ajustando hiperparâmetros com o conjunto de validação.
+    \item Executar as tarefas de regressão e os experimentos com diferentes quantidades de rótulos; calcular e analisar as métricas.
+    \item Consolidar os resultados, revisar a metodologia e redigir a versão final do trabalho.
+\end{enumerate}
+
+\subsection{Cronograma}
+
+O cronograma proposto para o período de janeiro a junho de 2027 é apresentado na Tabela \ref{tab:cronograma}. As atividades de redação e registro dos experimentos ocorrerão ao longo de todo o período.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Cronograma proposto para o desenvolvimento do trabalho.}
+    \label{tab:cronograma}
+    \small
+    \begin{tabular}{|p{7.1cm}|c|c|c|c|c|c|}
+        \hline
+        \textbf{Atividade} & \textbf{Jan.} & \textbf{Fev.} & \textbf{Mar.} & \textbf{Abr.} & \textbf{Mai.} & \textbf{Jun.} \\
+        \hline
+        Revisão bibliográfica e definição do protocolo experimental & X & X & & & & \\
+        \hline
+        Obtenção, análise e limpeza dos dados da C2DB & X & X & & & & \\
+        \hline
+        Conversão das estruturas em grafos e definição das partições & & X & X & & & \\
+        \hline
+        Implementação e validação das aumentações; modelo supervisionado de referência & & & X & X & & \\
+        \hline
+        Implementação e treinamento dos modelos contrastivos & & & & X & X & \\
+        \hline
+        Experimentos downstream, métricas e análise comparativa & & & & & X & X \\
+        \hline
+        Consolidação dos resultados, redação e revisão final & & & & X & X & X \\
+        \hline
+    \end{tabular}
+\end{table}
 

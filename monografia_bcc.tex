@@ -18,7 +18,23 @@
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{amsmath}			% Comandos matemáticos adicionais
 % ---
+% Pacotes de figuras
+% ---
+\usepackage{tikz}
+\usepackage{amssymb}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds, calc}
 
+% Paleta de Cores Acadêmica
+\definecolor{mainblue}{RGB}{30, 58, 138}
+\definecolor{lightblue}{RGB}{239, 246, 255}
+\definecolor{accentcyan}{RGB}{47,116,226}
+\definecolor{lightcyan}{RGB}{236, 254, 255}
+\definecolor{accentgreen}{RGB}{21, 128, 61}
+\definecolor{lightgreen}{RGB}{240, 253, 244}
+\definecolor{accentpurple}{RGB}{109, 40, 217}
+\definecolor{lightpurple}{RGB}{245, 243, 255}
+\definecolor{darkgray}{RGB}{30, 41, 59}
+\definecolor{bordergray}{RGB}{203, 213, 225}
 % ---
 % Pacotes de citações
 % ---
@@ -244,7 +260,7 @@ Materiais bidimensionais (2D) são promissores para aplicações eletrônicas e 
  \vspace{\onelineskip}
     
  \noindent
- \textbf{Palavras-chaves}: Aprendizado constrastivo, Materiais 2D, Aprendizado de Máquina.
+ \textbf{Palavras-chaves}: Aprendizado contrastivo, Materiais 2D, Aprendizado de Máquina.
 \end{resumo}
 
 % resumo em inglês
@@ -254,7 +270,7 @@ Two-dimensional (2D) materials are promising for electronic and energy applicati
    \vspace{\onelineskip}
  
    \noindent 
-   \textbf{Key-words}: Contrastive Learning, 2D Materials, Machine Learning.
+   \textbf{Keywords}: Contrastive Learning, 2D Materials, Machine Learning.
  \end{otherlanguage*}
 \end{resumo}
 
@@ -298,6 +314,7 @@ Two-dimensional (2D) materials are promising for electronic and energy applicati
   \item[NT-Xent] Normalized Temperature-Scaled Cross-Entropy
   \item[PBE] Perdew-Burke-Ernzerhof
   \item[SimCLR] Simple Framework for Contrastive Learning of Visual Representations
+  \item[SMICLR] SMILES Contrastive Learning
   \item[SOAP] Smooth Overlap of Atomic Positions
   \item[SupCon] Supervised Contrastive Learning
   \item[VASP] Vienna Ab initio Simulation Package
